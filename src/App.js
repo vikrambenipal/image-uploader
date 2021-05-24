@@ -1,23 +1,30 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
+import Image from './image.svg';
+import styled from 'styled-components';
+import Card from '@material-ui/core/Card';
+import Button from '@material-ui/core/Button';
+
+const Uploader = styled.div`
+  display: flex;
+  flex-direction: column;
+  border: 2px solid black;
+  border-style: dashed;
+`
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Card>
+        <h1>Upload your image</h1>
+        <p>File should be Jpeg, Png,...</p>
+        <Uploader>
+          <img src={Image} />
+          <p>Drag and drop your image here</p>
+          <p>Or</p>
+        </Uploader>
+        <Button>Choose a file</Button>
+      </Card>
     </div>
   );
 }
